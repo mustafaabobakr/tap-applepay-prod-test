@@ -1,4 +1,4 @@
-import { ApplePayButton } from "@tap-payments/apple-pay-button";
+import { ApplePayButton, abortApplePaySession, ApplePayButtonProps } from "@tap-payments/apple-pay-button";
 
 const items = [
 	{
@@ -31,7 +31,7 @@ const items = [
 			recurringIntervalCount: 1,
 		},
 	},
-];
+] as ApplePayButtonProps["transaction"]["items"];
 
 const newLineItems =
 	items?.map((item) => ({
@@ -95,7 +95,7 @@ function App() {
 				customer={{
 					name: [
 						{
-							locale: "en",
+							lang: "en",
 							first: "test",
 							last: "tester",
 							middle: "test",
